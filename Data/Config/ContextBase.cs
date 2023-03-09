@@ -18,6 +18,7 @@ namespace Data.Config
         public ContextBase(DbContextOptions<ContextBase> options) : base(options)
         { }
 
+        public DbSet<Produto> Produto { get; set; }
         public DbSet<UpExcel> UpExcels { get; set; }
         public DbSet<ApplicationUser> ApplicationUser { get; set; }
 
