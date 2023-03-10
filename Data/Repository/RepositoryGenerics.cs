@@ -84,6 +84,15 @@ namespace Data.Repository
             }
         }
 
+        public void AddRange(IEnumerable<T> entities)
+        {
+            using (var data = new ContextBase(_OptionsBuilder))
+            {
+                data.Set<T>().AddRange(entities);
+                data.SaveChanges();
+            }
+        }
+
         #region Disposed https://docs.microsoft.com/pt-br/dotnet/standard/garbage-collection/implementing-dispose
         // Flag: Has Dispose already been called?
         bool disposed = false;

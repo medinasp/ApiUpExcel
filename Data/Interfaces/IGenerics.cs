@@ -1,4 +1,5 @@
 ﻿using Data.Config;
+using Data.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -17,5 +18,6 @@ namespace Data.Interfaces
         Task<T> GetEntityById(int Id);
         Task<List<T>> List();
         void SetContextOptions(DbContextOptions<ContextBase> options);
+        void AddRange(IEnumerable<T> entities);
     }
 }

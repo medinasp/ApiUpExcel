@@ -14,7 +14,11 @@ namespace Data.Repository
     {
         public RepositoryProduto(DbContextOptions<ContextBase> optionsBuilder) : base(optionsBuilder)
         {
+        }
 
+        public async Task AddRangeAsync(IEnumerable<Produto> produtos)
+        {
+            await AddRangeAsync(produtos);
         }
     }
 }

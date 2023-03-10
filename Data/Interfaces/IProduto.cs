@@ -9,5 +9,6 @@ namespace Data.Interfaces
 {
     public interface IProduto : IGenerics<Produto>
     {
+        Task AddRangeAsync(IEnumerable<Produto> produtos);
     }
 }

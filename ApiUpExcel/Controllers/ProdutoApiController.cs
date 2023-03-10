@@ -72,5 +72,18 @@ namespace ApiUpExcel.Controllers
             await IProduto.DeleteRange(request.Ids);
             return NoContent();
         }
+
+        [HttpPost("api/adicionarRangeProdutos")]
+        public IActionResult AddRange([FromBody] Produto[] produtos)
+        {
+            if (produtos == null || produtos.Length == 0)
+            {
+                return BadRequest("Nenhum produto fornecido");
+            }
+
+            IProduto.AddRange(produtos);
+
+            return Ok("Produtos adicionados com sucesso");
+        }
     }
 }
